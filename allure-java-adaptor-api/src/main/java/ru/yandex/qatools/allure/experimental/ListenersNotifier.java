@@ -104,12 +104,14 @@ public class ListenersNotifier extends LifecycleListener {
      * Invoke to tell listeners that an step started event processed
      */
     @Override
-    public void fire(StepStartedEvent event) {
+    public void fire(StepStartedEvent event) throws Exception {
         for (LifecycleListener listener : listeners) {
             try {
                 listener.fire(event);
             } catch (Exception e) {
                 logError(listener, e);
+
+                throw e;
             }
         }
     }
@@ -118,12 +120,13 @@ public class ListenersNotifier extends LifecycleListener {
      * Invoke to tell listeners that an custom step event processed
      */
     @Override
-    public void fire(StepEvent event) {
+    public void fire(StepEvent event) throws Exception {
         for (LifecycleListener listener : listeners) {
             try {
                 listener.fire(event);
             } catch (Exception e) {
                 logError(listener, e);
+                throw e;
             }
         }
     }
@@ -132,28 +135,32 @@ public class ListenersNotifier extends LifecycleListener {
      * Invoke to tell listeners that an step finished event processed
      */
     @Override
-    public void fire(StepFinishedEvent event) {
-        for (LifecycleListener listener : listeners) {
-            try {
-                listener.fire(event);
-            } catch (Exception e) {
-                logError(listener, e);
-            }
-        }
+    public void fire(StepFinishedEvent event) throws Exception {
+      for (LifecycleListener listener : listeners) {
+          try {
+              listener.fire(event);
+          } catch (Exception e) {
+              logError(listener, e);
+
+              throw e;
+          }
+      }
     }
 
     /**
      * Invoke to tell listeners that an test case started event processed
      */
     @Override
-    public void fire(TestCaseStartedEvent event) {
-        for (LifecycleListener listener : listeners) {
-            try {
-                listener.fire(event);
-            } catch (Exception e) {
-                logError(listener, e);
-            }
-        }
+    public void fire(TestCaseStartedEvent event) throws Exception {
+      for (LifecycleListener listener : listeners) {
+          try {
+              listener.fire(event);
+          } catch (Exception e) {
+              logError(listener, e);
+
+              throw e;
+          }
+      }
     }
 
     /**
@@ -161,83 +168,95 @@ public class ListenersNotifier extends LifecycleListener {
      */
     @Override
     public void fire(TestCaseEvent event) {
-        for (LifecycleListener listener : listeners) {
-            try {
-                listener.fire(event);
-            } catch (Exception e) {
-                logError(listener, e);
-            }
-        }
+      for (LifecycleListener listener : listeners) {
+          try {
+              listener.fire(event);
+          } catch (Exception e) {
+              logError(listener, e);
+
+              throw e;
+          }
+      }
     }
 
     /**
      * Invoke to tell listeners that an test case finished event processed
      */
     @Override
-    public void fire(TestCaseFinishedEvent event) {
-        for (LifecycleListener listener : listeners) {
-            try {
-                listener.fire(event);
-            } catch (Exception e) {
-                logError(listener, e);
-            }
-        }
+    public void fire(TestCaseFinishedEvent event) throws Exception {
+      for (LifecycleListener listener : listeners) {
+          try {
+              listener.fire(event);
+          } catch (Exception e) {
+              logError(listener, e);
+
+              throw e;
+          }
+      }
     }
 
     /**
      * Invoke to tell listeners that an custom test suite event processed
      */
     @Override
-    public void fire(TestSuiteEvent event) {
-        for (LifecycleListener listener : listeners) {
-            try {
-                listener.fire(event);
-            } catch (Exception e) {
-                logError(listener, e);
-            }
-        }
+    public void fire(TestSuiteEvent event) throws Exception {
+      for (LifecycleListener listener : listeners) {
+          try {
+              listener.fire(event);
+          } catch (Exception e) {
+              logError(listener, e);
+
+              throw e;
+          }
+      }
     }
 
     /**
      * Invoke to tell listeners that an test suite finished event processed
      */
     @Override
-    public void fire(TestSuiteFinishedEvent event) {
-        for (LifecycleListener listener : listeners) {
-            try {
-                listener.fire(event);
-            } catch (Exception e) {
-                logError(listener, e);
-            }
-        }
+    public void fire(TestSuiteFinishedEvent event) throws Exception {
+      for (LifecycleListener listener : listeners) {
+          try {
+              listener.fire(event);
+          } catch (Exception e) {
+              logError(listener, e);
+
+              throw e;
+          }
+      }
     }
 
     /**
      * Invoke to tell listeners that an clear step storage event processed
      */
     @Override
-    public void fire(ClearStepStorageEvent event) {
-        for (LifecycleListener listener : listeners) {
-            try {
-                listener.fire(event);
-            } catch (Exception e) {
-                logError(listener, e);
-            }
-        }
+    public void fire(ClearStepStorageEvent event) throws Exception {
+      for (LifecycleListener listener : listeners) {
+          try {
+              listener.fire(event);
+          } catch (Exception e) {
+              logError(listener, e);
+
+              throw e;
+          }
+      }
     }
 
     /**
      * Invoke to tell listeners that an clear test case storage event processed
      */
     @Override
-    public void fire(ClearTestStorageEvent event) {
-        for (LifecycleListener listener : listeners) {
-            try {
-                listener.fire(event);
-            } catch (Exception e) {
-                logError(listener, e);
-            }
-        }
+    public void fire(ClearTestStorageEvent event) throws Exception {
+      for (LifecycleListener listener : listeners) {
+          try {
+              listener.fire(event);
+          } catch (Exception e) {
+              logError(listener, e);
+
+              throw e;
+          }
+      }
     }
 
     /**
